@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    environment:
+      - INFLUXDB_DB=${DB_NAME:-climate}
+      - INFLUXDB_USER=${DB_USER:-db_user}
+      - INFLUXDB_PASSWORD=${DB_PASSWORD:-db_password}
+    ports:
+      - 8086:8086
+    volumes:
+      - ./data/influxdb:/var/lib/influxdb
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    environment:
+      - INFLUXDB_DB=${DB_NAME:-climate}
+      - INFLUXDB_USER=${DB_USER:-db_user}
+      - INFLUXDB_PASSWORD=${DB_PASSWORD:-db_password}
+      - INFLUXDB_PORT=8086
+    ports:
+      - 3000:3000
+    volumes:
+      - ./conf/grafana/provisioning:/etc/grafana/provisioning
+    restart: unless-stopped

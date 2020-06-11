@@ -1,0 +1,9 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    url: http://influxdb:${INFLUXDB_PORT}
+    user: ${INFLUXDB_USER}
+    password: ${INFLUXDB_PASSWORD}
+    database: ${INFLUXDB_DB}
