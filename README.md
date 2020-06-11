@@ -40,8 +40,8 @@ The `docker-compose.yml` is set up with a container for
 InfluxDB and Grafana are configured to share the following values
 
 
-|| Env Var || Default || Description ||
----------------------------------------
+| Env Var | Default | Description |
+|---------|---------|-------------|
 | DB_NAME | climate | The name of the InfluxDB database to create. (This will be written to by the sensors, and read by
 grafana) |
 | DB_USER | db_user | The name of the database user to create. Will be granted read and write access. (The sensors and
@@ -59,8 +59,8 @@ For the Arduino Sketch, you'll want to install a few libraries
 
 Next there are a few values you'll need to update, based on your own configuration
 
-|| Value || Description ||
---------------------------
+| Value | Description |
+|-------|-------------|
 | ssid | The SSID for your wireless network |
 | password | The password for your wireless network |
 | hostname | The name you want to give to your sensor (this value will be used to tag incoming data) |
