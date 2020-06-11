@@ -42,10 +42,8 @@ InfluxDB and Grafana are configured to share the following values
 
 | Env Var | Default | Description |
 |---------|---------|-------------|
-| DB_NAME | climate | The name of the InfluxDB database to create. (This will be written to by the sensors, and read by
-grafana) |
-| DB_USER | db_user | The name of the database user to create. Will be granted read and write access. (The sensors and
-grafana will share this user) |
+| DB_NAME | climate | The name of the InfluxDB database to create. (This will be written to by the sensors, and read by grafana) |
+| DB_USER | db_user | The name of the database user to create. Will be granted read and write access. (The sensors and grafana will share this user) |
 | DB_PASSWORD | db_password | The password for the database user |
 
 
