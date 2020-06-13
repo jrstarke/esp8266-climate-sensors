@@ -1,13 +1,13 @@
-version: "3.7"
+version: "2"
 services:
 
   influxdb:
     image: influxdb
     container_name: influxdb
     environment:
-      - INFLUXDB_DB=${DB_NAME:-climate}
-      - INFLUXDB_USER=${DB_USER:-db_user}
-      - INFLUXDB_PASSWORD=${DB_PASSWORD:-db_password}
+      - INFLUXDB_DB=climate
+      - INFLUXDB_USER=db_user
+      - INFLUXDB_PASSWORD=db_password
     ports:
       - 8086:8086
     volumes:
@@ -18,11 +18,11 @@ services:
     image: grafana/grafana
     container_name: grafana
     environment:
-      - INFLUXDB_DB=${DB_NAME:-climate}
-      - INFLUXDB_USER=${DB_USER:-db_user}
-      - INFLUXDB_PASSWORD=${DB_PASSWORD:-db_password}
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_SECURITY_ALLOW_EMBEDDING=true
+      - INFLUXDB_DB=climate
+      - INFLUXDB_USER=db_user
+      - INFLUXDB_PASSWORD=db_password
       - INFLUXDB_PORT=8086
     ports:
       - 3000:3000
