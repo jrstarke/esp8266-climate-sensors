@@ -28,4 +28,5 @@ services:
       - 3000:3000
     volumes:
       - ./conf/grafana/provisioning:/etc/grafana/provisioning
+      - ./conf/grafana/dashboards:/dashboards
     restart: unless-stopped
